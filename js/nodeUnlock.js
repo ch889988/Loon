@@ -481,7 +481,7 @@ function googleToCN() {
                 resolve("404 Not Found");
             } else {
                 result["googleToCN"] = "<b>googleToCN: </b>未被送中"
-                return;
+                resolve(response.status);
             }
         })
     })

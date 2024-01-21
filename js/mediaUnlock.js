@@ -1,5 +1,5 @@
 /*
- * 流媒体节点解锁查询
+ * 流媒体解锁查询
  */
 const NF_BASE_URL = "https://www.netflix.com/title/81280792";
 const DISNEY_BASE_URL = 'https://www.disneyplus.com';

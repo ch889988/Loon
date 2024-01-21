@@ -458,10 +458,9 @@ function googleToCN() {
         let params = {
             url: Google_BASE_URL,
             node: nodeName,
-            timeout: 10000, //ms
+            timeout: 15000, //ms
             headers:{
                 'Accept-Encoding' : `gzip, deflate, br`,
-                'Connection' : `keep-alive`,
                 'Accept' : `text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8`,
                 'User-Agent' : `Mozilla/5.0 (iPhone; CPU iPhone OS 15_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.1 Mobile/15E148 Safari/604.1`,
                 'Accept-Language' : `zh-CN,zh-Hans;q=0.9`

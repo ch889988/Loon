@@ -38,13 +38,13 @@ function googleToCN() {
         let params = {
             url: Google_BASE_URL,
             node: nodeName,
-            timeout: 5000, //ms
+            timeout: 15000, //ms
             headers:{
                 'Accept-Encoding' : `gzip, deflate, br`,
                 'Connection' : `keep-alive`,
                 'Accept' : `text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8`,
                 'Host' : `www.google.com`,
-                'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Safari/537.36',
+                'User-Agent' : `Mozilla/5.0 (iPhone; CPU iPhone OS 15_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.1 Mobile/15E148 Safari/604.1`,
                 'Accept-Language' : `zh-CN,zh-Hans;q=0.9`
             }
         }

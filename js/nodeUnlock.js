@@ -54,7 +54,7 @@ function disneyLocation() {
         let params = {
             url: DISNEY_LOCATION_BASE_URL,
             node: nodeName,
-            timeout: 5000, //ms
+            timeout: 15000, //ms
             headers: {
                 'Accept-Language': 'en',
                 "Authorization": 'ZGlzbmV5JmJyb3dzZXImMS4wLjA.Cu56AgSfBTDag5NiRA81oLHkDZfu5L3CKadnefEAY84',
@@ -121,7 +121,7 @@ function disneyHomePage() {
         let params = {
             url: DISNEY_BASE_URL,
             node: nodeName,
-            timeout: 5000, //ms
+            timeout: 15000, //ms
             headers: {
                 'Accept-Language': 'en',
                 'User-Agent': UA,
@@ -154,7 +154,7 @@ function ytbTest() {
         let params = {
             url: YTB_BASE_URL,
             node: nodeName,
-            timeout: 10000, //ms
+            timeout: 15000, //ms
             headers: {
                 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Safari/537.36',
             }
@@ -211,7 +211,7 @@ function daznTest() {
         let params = {
             url: Dazn_BASE_URL,
             node: nodeName,
-            timeout: 5000, //ms
+            timeout: 15000, //ms
             headers: {
                 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Safari/537.36',
                 "Content-Type": "application/json"
@@ -252,7 +252,7 @@ function parmTest() {
         let params = {
             url: Param_BASE_URL,
             node: nodeName,
-            timeout: 5000, //ms
+            timeout: 15000, //ms
             headers: {
                 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Safari/537.36',
             }
@@ -285,7 +285,7 @@ function discoveryTest() {
         let params = {
             url: Discovery_token_BASE_URL,
             node: nodeName,
-            timeout: 5000, //ms
+            timeout: 15000, //ms
             headers: {
                 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Safari/537.36',
             }
@@ -350,7 +350,7 @@ function nfTest() {
         let params = {
             url: NF_BASE_URL,
             node: nodeName,
-            timeout: 6000, //ms
+            timeout: 15000, //ms
             headers: {
                 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.5 Safari/605.1.15',
             }
@@ -400,7 +400,7 @@ function gptTest() {
         let params = {
             url: GPT_BASE_URL,
             node: nodeName,
-            timeout: 5000, //ms
+            timeout: 15000, //ms
         }
         $httpClient.get(params, (errormsg,response,data) => {
             console.log("----------GPT--------------");
@@ -461,6 +461,7 @@ function googleToCN() {
             timeout: 15000, //ms
             headers:{
                 'Accept-Encoding' : `gzip, deflate, br`,
+                'Connection' : `keep-alive`,
                 'Accept' : `text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8`,
                 'User-Agent' : `Mozilla/5.0 (iPhone; CPU iPhone OS 15_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.1 Mobile/15E148 Safari/604.1`,
                 'Accept-Language' : `zh-CN,zh-Hans;q=0.9`

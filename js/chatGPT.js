@@ -19,7 +19,7 @@ let result = {
 
 let arrow = " ➟ "
 
-Promise.all(gptTest()).then(value => {
+Promise.all([gptTest()]).then(value => {
     let content = "------------------------------------</br>"+([result["ChatGPT"]]).join("</br></br>")
     content = content + "</br>------------------------------------</br>"+"<font color=#CD5C5C>"+"<b>节点</b> ➟ " + nodeName+ "</font>"
     content =`<p style="text-align: center; font-family: -apple-system; font-size: large; font-weight: thin">` + content + `</p>`

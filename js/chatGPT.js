@@ -27,20 +27,18 @@ let flags = new Map([[ "AC" , "🇦🇨" ] ,["AE","🇦🇪"], [ "AF" , "🇦�
 
 let result = {
     "title": '  节点解锁查询',
-    "YouTube": '<b>YouTube: </b>检测失败，请重试 ❗️',
+    "YouTube": '<b>YouTube: </b>检测失败，请重试� ❗️',
     "Netflix": '<b>Netflix: </b>检测失败，请重试 ❗️',
     "Dazn": "<b>Dazn: </b>检测失败，请重试 ❗️",
     "Disney": "<b>Disneyᐩ: </b>检测失败，请重试 ❗️",
     "Paramount" : "<b>Paramountᐩ: </b>检测失败，请重试 ❗️",
     "Discovery" : "<b>Discoveryᐩ: </b>检测失败，请重试 ❗️",
-    "ChatGPT": "<b>ChatGPT: </b>检测失败，请重试 ❗️",
-    "googleToCN": "<b>googleToCN: </b>检测失败，请重试 ❗️",
 }
 
 let arrow = " ➟ "
 
 Promise.all([ytbTest(),disneyLocation(),nfTest(),daznTest(),parmTest(),discoveryTest(),gptTest()]).then(value => {
-    let content = "------------------------------------</br>"+([result["Dazn"],result["Discovery"],result["Paramount"],result["Disney"],result["Netflix"],result["ChatGPT"],result["googleToCN"],result["YouTube"]]).join("</br></br>")
+    let content = "------------------------------------</br>"+([result["Dazn"],result["Discovery"],result["Paramount"],result["Disney"],result["Netflix"],result["ChatGPT"],result["YouTube"]]).join("</br></br>")
     content = content + "</br>------------------------------------</br>"+"<font color=#CD5C5C>"+"<b>节点</b> ➟ " + nodeName+ "</font>"
     content =`<p style="text-align: center; font-family: -apple-system; font-size: large; font-weight: thin">` + content + `</p>`
     console.log(content);
@@ -481,18 +479,18 @@ function googleToCN() {
         }
 
         $httpClient.get(params, (errormsg,response,data) => {
-            console.log("----------googleToCN--------------");
+            console.log("----------Google2CN--------------");
             if (errormsg) {
                 console.log("Google2CN request failed:" + errormsg);
-                result["googleToCN"] = "<b>googleToCN: </b>检测失败 ❗️";
+                result["Google2CN"] = "<b>2CN: </b>检测失败 ❗️";
                 resolve(errormsg);
                 return;
             }
             if (response.status == 400) {
-                result["googleToCN"] = "<b>googleToCN: </b>已被送中"
+                result["Google2CN"] = "<b>2CN: </b>已被送中"
                 resolve("404 Not Found");
             } else {
-                result["googleToCN"] = "<b>googleToCN: </b>未被送中"
+                result["Google2CN"] = "<b>2CN: </b>未被送中"
                 resolve(response.status);
             }
         })

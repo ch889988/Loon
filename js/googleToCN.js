@@ -38,7 +38,7 @@ function googleToCN() {
         let params = {
             url: Google_BASE_URL,
             node: nodeName,
-            timeout: 15000, //ms
+            timeout: 10000, //ms
             headers:{
                 'Accept-Encoding' : `gzip, deflate, br`,
                 'Connection' : `keep-alive`,

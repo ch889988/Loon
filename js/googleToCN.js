@@ -16,10 +16,8 @@ Promise.all([googleToCN()]).then(value => {
     let content = "------------------------------------</br>"+([result["googleToCN"]]).join("</br></br>")
     content = content + "</br>------------------------------------</br>"+"<font color=#CD5C5C>"+"<b>节点</b> ➟ " + nodeName+ "</font>"
     content =`<p style="text-align: center; font-family: -apple-system; font-size: large; font-weight: thin">` + content + `</p>`
-    console.log(content);
     $done({"title":result["title"],"htmlMessage":content})
 }).catch (values => {
-    console.log("reject:" + values);
     let content = "------------------------------------</br>"+([result["googleToCN"]]).join("</br></br>")
     content = content + "</br>------------------------------------</br>"+"<font color=#CD5C5C>"+"<b>节点</b> ➟ " + nodeName+ "</font>"
     content =`<p style="text-align: center; font-family: -apple-system; font-size: large; font-weight: thin">` + content + `</p>`
@@ -43,7 +41,6 @@ function googleToCN() {
 
         $httpClient.get(params, (errormsg,response,data) => {
             if (errormsg) {
-                console.log("googleToCN request failed:" + errormsg);
                 result["googleToCN"] = "<b>googleToCN: </b>检测失败 ❗️";
                 resolve(errormsg);
                 return;

@@ -1,8 +1,3 @@
-/*
- * google送中节点查询
- */
-
-
 const Google_BASE_URL = 'https://www.google.com/maps/timeline'
 
 var inputParams = $environment.params;
@@ -31,8 +26,6 @@ Promise.all([googleToCN()]).then(value => {
     $done({"title":result["title"],"htmlMessage":content})
 })
 
-
-//google送中
 function googleToCN() {
     return new Promise((resolve, reject) => {
         let params = {
@@ -49,7 +42,6 @@ function googleToCN() {
         }
 
         $httpClient.get(params, (errormsg,response,data) => {
-            console.log("----------googleToCN--------------");
             if (errormsg) {
                 console.log("googleToCN request failed:" + errormsg);
                 result["googleToCN"] = "<b>googleToCN: </b>检测失败 ❗️";

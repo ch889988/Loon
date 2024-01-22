@@ -1,6 +1,3 @@
-/*
- * ChatGPT解锁查询
- */
 const GPT_BASE_URL = 'https://chat.openai.com/'
 const GPT_RegionL_URL = 'https://chat.openai.com/cdn-cgi/trace'
 
@@ -41,7 +38,6 @@ function gptTest() {
             timeout: 5000, //ms
         }
         $httpClient.get(params, (errormsg,response,data) => {
-            console.log("----------GPT--------------");
             if (errormsg) {
                 console.log("GPT request failed:!!! " + errormsg);
                 result["ChatGPT"] = "<b>ChatGPT: </b>未支持 🚫"
@@ -50,7 +46,6 @@ function gptTest() {
                 return;
             } 
             let resp = JSON.stringify(data)
-            console.log("ChatGPT Main Test")
             let jdg = resp.indexOf("text/plain")
             if (jdg == -1) {
                 let p = {
@@ -59,7 +54,6 @@ function gptTest() {
                     timeout: 5000, //ms
                 }
                 $httpClient.get(p, (emsg, resheader, resData) => {
-                    console.log("----------GPT RegionL--------------");
                     if (emsg) {
                         console.log("GPT RegionL request error:" + errormsg);
                         result["ChatGPT"] = "<b>ChatGPT: </b>检测失败 ❗️";
@@ -73,17 +67,14 @@ function gptTest() {
                     let res = support_countryCodes.indexOf(region)
                     if (res != -1) {
                         result["ChatGPT"] = "<b>ChatGPT: </b>支持 "+arrow+ "⟦"+flags.get(region.toUpperCase())+"⟧ 🎉"
-                        console.log("支持 ChatGPT")
                         resolve(region)
                     } else {
                         result["ChatGPT"] = "<b>ChatGPT: </b>未支持 🚫"
-                        console.log("不支持 ChatGPT")
                         resolve("不支持 ChatGPT")
                     }
                 })
             } else {
                 result["ChatGPT"] = "<b>ChatGPT: </b>未支持 🚫"
-                console.log("不支持 ChatGPT")
                 resolve("不支持 ChatGPT")
             }
         })

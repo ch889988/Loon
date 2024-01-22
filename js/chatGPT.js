@@ -17,10 +17,8 @@ Promise.all([gptTest()]).then(value => {
     let content = "------------------------------------</br>"+([result["ChatGPT"]]).join("</br></br>")
     content = content + "</br>------------------------------------</br>"+"<font color=#CD5C5C>"+"<b>节点</b> ➟ " + nodeName+ "</font>"
     content =`<p style="text-align: center; font-family: -apple-system; font-size: large; font-weight: thin">` + content + `</p>`
-    console.log(content);
     $done({"title":result["title"],"htmlMessage":content})
 }).catch (values => {
-    console.log("reject:" + values);
     let content = "------------------------------------</br>"+([result["ChatGPT"]]).join("</br></br>")
     content = content + "</br>------------------------------------</br>"+"<font color=#CD5C5C>"+"<b>节点</b> ➟ " + nodeName+ "</font>"
     content =`<p style="text-align: center; font-family: -apple-system; font-size: large; font-weight: thin">` + content + `</p>`
@@ -38,7 +36,6 @@ function gptTest() {
         }
         $httpClient.get(params, (errormsg,response,data) => {
             if (errormsg) {
-                console.log("GPT request failed:!!! " + errormsg);
                 result["ChatGPT"] = "<b>ChatGPT: </b>未支持 🚫"
                 // resolve(errormsg);
                 resolve("不支持 ChatGPT")
@@ -54,15 +51,12 @@ function gptTest() {
                 }
                 $httpClient.get(p, (emsg, resheader, resData) => {
                     if (emsg) {
-                        console.log("GPT RegionL request error:" + errormsg);
                         result["ChatGPT"] = "<b>ChatGPT: </b>检测失败 ❗️";
                         resolve(emsg);
                         return;
                     }
 
-                    console.log("ChatGPT Region Test")
                     let region = resData.split("loc=")[1].split("\n")[0]
-                    console.log("ChatGPT Region: "+region)
                     let res = support_countryCodes.indexOf(region)
                     if (res != -1) {
                         result["ChatGPT"] = "<b>ChatGPT: </b>支持 "+arrow+ "⟦"+flags.get(region.toUpperCase())+"⟧ 🎉"

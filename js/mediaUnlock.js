@@ -1,6 +1,3 @@
-/*
- * 流媒体解锁查询
- */
 const NF_BASE_URL = "https://www.netflix.com/title/81280792";
 const DISNEY_BASE_URL = 'https://www.disneyplus.com';
 const DISNEY_LOCATION_BASE_URL = 'https://disney.api.edge.bamgrid.com/graph/v1/device/graphql';
@@ -32,10 +29,8 @@ Promise.all([ytbTest(),disneyLocation(),nfTest(),daznTest(),parmTest(),discovery
     let content = "------------------------------------</br>"+([result["Dazn"],result["Discovery"],result["Paramount"],result["Disney"],result["Netflix"],result["YouTube"]]).join("</br></br>")
     content = content + "</br>------------------------------------</br>"+"<font color=#CD5C5C>"+"<b>节点</b> ➟ " + nodeName+ "</font>"
     content =`<p style="text-align: center; font-family: -apple-system; font-size: large; font-weight: thin">` + content + `</p>`
-    console.log(content);
     $done({"title":result["title"],"htmlMessage":content})
 }).catch (values => {
-    console.log("reject:" + values);
     let content = "------------------------------------</br>"+([result["Dazn"],result["Discovery"],result["Paramount"],result["Disney"],result["Netflix"],result["YouTube"]]).join("</br></br>")
     content = content + "</br>------------------------------------</br>"+"<font color=#CD5C5C>"+"<b>节点</b> ➟ " + nodeName+ "</font>"
     content =`<p style="text-align: center; font-family: -apple-system; font-size: large; font-weight: thin">` + content + `</p>`
@@ -76,14 +71,12 @@ function disneyLocation() {
             }),
         }
         $httpClient.post(params, (errormsg,response,data) => {
-            console.log("----------disney--------------");
             if (errormsg) {
                 result["Discovery"] = "<b>Disneyᐩ:</b>检测失败 ❗️";
                 resolve("disney request failed:" + errormsg);
                 return;
             }
             if (response.status == 200) {
-                console.log("disney request result:" + response.status);
                 let resData = JSON.parse(data);
                 if (resData?.extensions?.sdk?.session != null) {
                     let {
@@ -134,7 +127,6 @@ function disneyHomePage() {
                 } else {
                     let region = match[1];
                     let cnbl = match[2];
-                    //console.log("homepage"+region+cnbl)
                     resolve({region, cnbl});
                 }
             }
@@ -153,9 +145,7 @@ function ytbTest() {
             }
         }
         $httpClient.get(params, (errormsg,response,data) => {
-            console.log("----------YTB--------------");
             if (errormsg) {
-                console.log("YTB request failed:" + errormsg);
                 result["YouTube"] = "<b>YouTube Premium: </b>检测失败 ❗️";
                 resolve(errormsg);
                 return;
@@ -164,7 +154,6 @@ function ytbTest() {
                 result["YouTube"] = "<b>YouTube Premium: </b>检测失败 ❗️";
                 resolve(response.status);
             } else {
-              console.log("YTB request data:" + response.status);
               if (data.indexOf('Premium is not available in your country') !== -1) {
                   result["YouTube"] = "<b>YouTube Premium: </b>未支持 🚫"
                   resolve("YTB test failed");
@@ -179,7 +168,6 @@ function ytbTest() {
                   } else {
                       region = 'US'
                   }
-                  console.log("YTB region:" + region);
                   result["YouTube"] = "<b>YouTube Premium: </b>支持 "+arrow+ "⟦"+flags.get(region.toUpperCase())+"⟧ 🎉"
                   resolve(region);
               } else {
@@ -212,15 +200,12 @@ function daznTest() {
             body: extra
         };
         $httpClient.post(params, (errormsg,response,data) => {
-            console.log("----------DAZN--------------");
             if (errormsg) {
-                console.log("Dazn request error:" + errormsg);
                 result["Dazn"] = "<b>Dazn: </b>检测失败 ❗️";
                 resolve(errormsg);
                 return;
             }
             if (response.status == 200) {
-                console.log("Dazn request data:" + response.status);
                 let region = ''
                 let re = new RegExp('"GeolocatedCountry":"(.*?)"', 'gm');
                 let ret = re.exec(data)
@@ -251,14 +236,11 @@ function parmTest() {
             }
         }
         $httpClient.get(params, (errormsg,response,data) => {
-            console.log("----------PARAM--------------");
             if (errormsg) {
-                console.log("Param request error:" + errormsg);
                 result["Paramountᐩ"] = "<b>Paramountᐩ: </b>检测失败 ❗️";
                 resolve(errormsg);
                 return;
             }
-            console.log("param result:" + response.status);
             if (response.status == 200) {
                 result["Paramount"] = "<b>Paramountᐩ: </b>支持 🎉 ";
                 resolve();
@@ -285,13 +267,10 @@ function discoveryTest() {
         }
         $httpClient.get(params, (errormsg,response,data) => {
             if (errormsg) {
-                console.log("Discovery token request error:" + errormsg);
                 resolve(errormsg);
                 return;
             }
             if (response.status == 200) {
-                console.log("----------Discory token--------------");
-                console.log("discovery_token request result:" + data);
                 let d = JSON.parse(data);
                 let token = d["data"]["attributes"]["token"];
                 const cookievalid =`_gcl_au=1.1.858579665.1632206782; _rdt_uuid=1632206782474.6a9ad4f2-8ef7-4a49-9d60-e071bce45e88; _scid=d154b864-8b7e-4f46-90e0-8b56cff67d05; _pin_unauth=dWlkPU1qWTRNR1ZoTlRBdE1tSXdNaTAwTW1Nd0xUbGxORFV0WWpZMU0yVXdPV1l6WldFeQ; _sctr=1|1632153600000; aam_fw=aam%3D9354365%3Baam%3D9040990; aam_uuid=24382050115125439381416006538140778858; st=${token}; gi_ls=0; _uetvid=a25161a01aa711ec92d47775379d5e4d; AMCV_BC501253513148ED0A490D45%40AdobeOrg=-1124106680%7CMCIDTS%7C18894%7CMCMID%7C24223296309793747161435877577673078228%7CMCAAMLH-1633011393%7C9%7CMCAAMB-1633011393%7CRKhpRz8krg2tLO6pguXWp5olkAcUniQYPHaMWWgdJ3xzPWQmdj0y%7CMCOPTOUT-1632413793s%7CNONE%7CvVersion%7C5.2.0; ass=19ef15da-95d6-4b1d-8fa2-e9e099c9cc38.1632408400.1632406594`;
@@ -306,15 +285,12 @@ function discoveryTest() {
                     }
                 }
                 $httpClient.get(p, (emsg, res, resData) => {
-                    console.log("----------Discory--------------");
                     if (emsg) {
-                        console.log("Discovery request error:" + errormsg);
                         result["Discovery"] = "<b>Discoveryᐩ: </b>检测失败 ❗️";
                         resolve(emsg);
                         return;
                     }
                     if (res.status == 200) {
-                        console.log("Discovery request result:" + resData);
                         let resD = JSON.parse(resData);
                         let locationd = resD["data"]["attributes"]["currentLocationTerritory"];
                         if (locationd == 'us') {
@@ -350,9 +326,7 @@ function nfTest() {
         }
         
         $httpClient.get(params, (errormsg,response,data) => {
-            console.log("----------NetFlix--------------");
             if (errormsg) {
-                console.log("NF request failed: " + errormsg);
                 result["Netflix"] = "<b>Netflix: </b>检测失败 ❗️";
                 resolve(errormsg);
                 return;
@@ -364,12 +338,10 @@ function nfTest() {
                 result["Netflix"] = "<b>Netflix: </b>支持自制剧集 ⚠️"
                 resolve("404 Not Found");
             } else if (response.status == 200) {
-                console.log("NF request result:" + JSON.stringify(response.headers));
                 let ourl = response.headers['X-Originating-URL']
                 if (ourl == undefined) {
                     ourl = response.headers['X-Originating-Url']
                 }
-                console.log("X-Originating-URL:" + ourl)
                 let region = ourl.split('/')[3]
                 region = region.split('-')[0];
                 if (region == 'title') {

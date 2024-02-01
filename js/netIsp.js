@@ -1,4 +1,4 @@
-const scriptName = "入口落地查询";
+const scriptName = "🐱入口落地查询";
 (async () => {
   try {
     const loon = $loon.split(" ");

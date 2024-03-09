@@ -1,7 +1,3 @@
-/*
-README: https://github.com/VirgilClyne/Cloudflare
-*/
-
 const $ = new Env("☁ Cloudflare: 1️⃣ 1.1.1.1 v2.0.0(3).panel");
 const DataBase = {
 	"Panel": {

@@ -69,6 +69,12 @@ const DataBase = {
 				case "Shadowrocket":
 					break;
 				case "Loon":
+					Panel.title = Settings?.Title ?? "𝙒𝘼𝙍𝙋 𝙄𝙣𝙛𝙤"
+					Panel.icon = Settings?.Icon ?? "https://raw.githubusercontent.com/shindgewongxj/WHATSINStash/main/icon/warp.png";
+					Panel["icon-color"] = Settings?.IconColor ?? "#f48220";
+					Panel.backgroundColor = Settings?.BackgroundColor ?? "#f6821f";
+					Panel.content = connectInfo;
+					break;
 				case "Quantumult X":
 					Panel.title = Settings?.Title ?? "☁ 𝙒𝘼𝙍𝙋 𝙄𝙣𝙛𝙤"
 					Panel.message = connectInfo;

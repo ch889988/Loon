@@ -1,0 +1,9 @@
+#!name=百度云
+#!desc=百度云
+#!icon=https://raw.githubusercontent.com/deezertidal/private/main/icons/baiducloud.png
+
+[Script]
+^https:\/\/pan\.baidu\.com\/rest\/.*\/membership\/user\?app_id url script-response-body https://gist.githubusercontent.com/ddgksf2013/f43026707830c7818ee3ba624e383c8d/raw/baiduCloud.vip.js
+
+[MITM]
+hostname = pan.baidu.com

@@ -2,10 +2,7 @@
 #!desc=Bilibili去广告
 #!icon=https://github.com/BiliUniverse/ADBlock/raw/main/database/icon_108x.png
 
-[MITM]
-hostname = app.bilibili.com,api.live.bilibili.com,api.vc.bilibili.com, api.bilibili.com, manga.bilibili.com, grpc.biliapi.net,api.biliapi.net, -broadcast.chat.bilibili.com, -*cdn*.biliapi.net, -*tracker*.biliapi.net
-
-[URL Rewrite]
+[Rewrite]
 #～BiliBili_哔哩哔哩_屏蔽IP请求@ddgksf2013
 ^https?:\/\/app\.bilibili\.com\/x\/resource\/ip - reject
 #～BiliBili_哔哩哔哩_屏蔽DefaultWord@ddgksf2013
@@ -60,3 +57,6 @@ http-response ^https:\/\/app\.bilibili\.com\/bilibili\.app\.(view\.v1\.View\/Vie
 http-response ^https://app\.bilibili\.com/bilibili\.app\.dynamic\.v2\.Dynamic/DynAll$ requires-body=1,script-path=https://raw.githubusercontent.com/yjqiang/surge_scripts/main/scripts/bilibili/bilibili_dynamic.js
 #～BiliBili_哔哩哔哩_繁体CC字幕转中文简体[自行启用]@ddgksf2013
 # http-response ^https?:\/\/i.\.hdslb\.com\/bfs\/subtitle\/.+\.json$ requires-body=1,script-path=https://github.com/deezertidal/private/raw/master/js-backup/Rewrite/Function/Bilibili_CC.conf
+
+[MITM]
+hostname = app.bilibili.com,api.live.bilibili.com,api.vc.bilibili.com, api.bilibili.com, manga.bilibili.com, grpc.biliapi.net,api.biliapi.net, -broadcast.chat.bilibili.com, -*cdn*.biliapi.net, -*tracker*.biliapi.net

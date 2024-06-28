@@ -1,0 +1,12 @@
+﻿#!name=彩云天气
+#!desc=彩云天气
+#!icon=https://raw.githubusercontent.com/deezertidal/private/main/icons/caiyun.png
+
+[Rewrite]
+^https:\/\/ad\.caiyunapp\.com\/ reject
+
+[Script]
+http-response ^https:\/\/biz\.cyapi\.cn\/(p\/v1\/vip_info|v2\/user) script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/break/caiyun.js, requires-body=true, timeout=60
+
+[MITM]
+hostname=biz.cyapi.cn, wrapper.cyapi.cn

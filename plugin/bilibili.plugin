@@ -1,8 +1,6 @@
-#!name=哔哩哔哩去广告
-#!desc=哔哩哔哩去广告
-#!icon=https://raw.githubusercontent.com/deezertidal/private/main/icons/biliad.png
-#!homepage=https://yfamily.ml
-#!author=ddgksf2013
+#!name=Bilibili去广告
+#!desc=Bilibili去广告
+#!icon=https://github.com/BiliUniverse/ADBlock/raw/main/database/icon_108x.png
 
 [MITM]
 hostname = app.bilibili.com,api.live.bilibili.com,api.vc.bilibili.com, api.bilibili.com, manga.bilibili.com, grpc.biliapi.net,api.biliapi.net, -broadcast.chat.bilibili.com, -*cdn*.biliapi.net, -*tracker*.biliapi.net

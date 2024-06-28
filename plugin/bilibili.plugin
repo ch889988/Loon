@@ -1,0 +1,21 @@
+#!name=Bilibili去广告
+#!desc=Bilibili去广告
+#!icon=https://github.com/BiliUniverse/ADBlock/raw/main/database/icon_108x.png
+
+[Rewrite]
+^https?:\/\/api\.bilibili\.com\/pgc\/activity\/deliver\/material\/receive - reject-dict
+^https?:\/\/api\.bilibili\.com\/x\/vip\/ads\/material\/report - reject-dict
+^https://api.bilibili.com/pgc/season/player/cards - reject-dict
+^https?:\/\/api\.bilibili\.com\/pgc\/season\/player\/ogv\/cards - reject-dict
+^https?:\/\/app\.bilibili\.com\/x\/resource\/ip - reject
+^https://app.bilibili.com/x/v2/splash/show - reject-dict
+^https?:\/\/manga\.bilibili\.com\/twirp\/comic\.v\d\.Comic\/(Flash|ListFlash|GetActivityTab) - reject-dict
+^https?:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.interface\.v1\.Search\/Default - reject
+
+[Script]
+http-response ^https:\/\/app\.bilibili\.com\/x\/(v2\/(splash\/(list|show)|feed\/index\?)|resource\/show\/tab\/v2) script-path=https://raw.githubusercontent.com/app2smile/rules/master/js/bilibili-json.js, requires-body=true, timeout=10, tag=bili-json
+http-response ^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.(view\.v1\.View\/View|dynamic\.v2\.Dynamic\/DynAll|playurl\.v1\.PlayURL\/PlayView)$ script-path=https://raw.githubusercontent.com/app2smile/rules/master/js/bilibili-proto.js, requires-body=true, binary-body-mode=true, timeout=10, tag=bili-proto
+http-response ^https?:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.(view|viewunite)\.v1\.View\/(View|TFInfo)$ script-path=https://github.com/ddgksf2013/Scripts/raw/master/bilibili_proto_beta.js, requires-body=true, binary-body-mode=true, timeout=60, tag=bilibili_proto_beta
+
+[MITM]
+hostname = -broadcast.chat.bilibili.com, -*cdn*.biliapi.net, -*tracker*.biliapi.net, app.bilibili.com, api.live.bilibili.com, *.bilibili.com, *.bili*.*, *.bilibili.*, grpc.biliapi.net, *biliapi.net

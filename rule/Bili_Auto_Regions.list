@@ -1,4 +1,4 @@
-# 该规则集用于配合bilibili自动地区脚本使用。
+# 该规则集用于配合bilibili自动地区脚本使用
 DOMAIN,api.biliapi.com
 DOMAIN,api.biliapi.net
 DOMAIN,api.bilibili.com

@@ -1,0 +1,10 @@
+#!name = NapiSSR
+#!desc = 免费获取 SSR 节点
+#!openUrl = https://napi.ltd
+#!icon = https://raw.githubusercontent.com/ch889988/Loon/main/icons/NapiSSR.png
+
+[Script]
+http-response ^https?://napi\.ltd/NapiSSR$ script-path=https://napi.ltd/script/Worker/NapiSSR.js, requires-body=true, timeout=60
+
+[Mitm]
+hostname = napi.ltd

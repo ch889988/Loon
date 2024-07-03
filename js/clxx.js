@@ -1,10 +1,4 @@
 const wd = "杭州";
-const loonwd = $persistentStore.read("city");
-
-if (loonwd !== undefined) {
-  wd = loonwd;
-}
-
 const $ = Env("🏎 今天能否开车");
 $.opts = {
     'open-url': `https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&rsv_idx=1&tn=baidu&wd=${encodeURIComponent(wd)}%e9%99%90%e8%a1%8c`,

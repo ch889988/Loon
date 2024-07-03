@@ -1,0 +1,6 @@
+#!name=IPv6 连接测试
+#!desc=IPv6 连接测试
+#!icon = https://raw.githubusercontent.com/ch889988/Loon/main/icons/ipv6test.png
+
+[Script]
+generic script-path=https://raw.githubusercontent.com/RS0485/network-rules/main/scripts/ipv6-check.js, timeout=60

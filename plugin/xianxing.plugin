@@ -6,4 +6,4 @@
 #!icon= https://raw.githubusercontent.com/ch889988/Loon/main/icons/DiDi.png
 
 [Script]
-script-path=https://raw.githubusercontent.com/Sliverkiss/GoodNight/master/Script/xianxing.js, timeout=60
+generic script-path=https://raw.githubusercontent.com/Sliverkiss/GoodNight/master/Script/xianxing.js, timeout=60

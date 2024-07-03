@@ -7,4 +7,4 @@
 
 [Script]
 
-cron "0 1 * * *" script-path=https://raw.githubusercontent.com/Keywos/rule/main/JS/loonyj.js, tag=每日油价
+cron "0 3 * * *" script-path=https://raw.githubusercontent.com/Keywos/rule/main/JS/loonyj.js, tag=每日油价

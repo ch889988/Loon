@@ -1,0 +1,8 @@
+#!name=车辆限行查询
+#!desc=车辆限行信息
+#!input = city
+#!openUrl = http://m.xy.bendibao.com/news/xianxingchaxun/city.php
+#!icon= https://raw.githubusercontent.com/ch889988/Loon/main/icons/DiDi.png
+
+[Script]
+cron "0 1 * * *" script-path=https://raw.githubusercontent.com/ch889988/Loon/main/js/clxx.js, timeout=60

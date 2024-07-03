@@ -2,11 +2,12 @@
 #!desc=车辆限行信息，loo:填写本地车或外地车 cartype:填写汽车种类，如燃油车 city缩写可前往 http://m.xy.bendibao.com/news/xianxingchaxun/city.php 查看
 #!desc=loo:填写本地车或外地车
 #!desc=cartype:填写汽车种类，如燃油车
-#!desc=city:city缩写可前往 http://m.xy.bendibao.com/news/xianxingchaxun/city.php 查看
+#!desc=city:city缩写可打开下方链接查看
 #!input = city
 #!select = cartype, 新能源, 燃油车
 #!select = loo, 本地车, 外地车
+#!openUrl = http://m.xy.bendibao.com/news/xianxingchaxun/city.php
 #!icon= https://raw.githubusercontent.com/ch889988/Loon/main/icons/DiDi.png
 
 [Script]
-generic script-path=https://raw.githubusercontent.com/Sliverkiss/GoodNight/master/Script/xianxing.js, timeout=60
+http-request script-path=https://raw.githubusercontent.com/Sliverkiss/GoodNight/master/Script/xianxing.js, timeout=60

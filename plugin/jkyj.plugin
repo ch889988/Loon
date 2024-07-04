@@ -1,5 +1,5 @@
-#!name=实时油价信息
-#!desc=定时监控每日油价（通知）地区可以填入省份拼音，如果有同音地区 就去下方链接找对应的地区
+#!name=油价信息
+#!desc=监控每日油价（通知）地区可以填入省份拼音，如果有同音地区 就去下方链接找对应的地区
 #!openUrl = http://m.qiyoujiage.com/
 #!icon = https://raw.githubusercontent.com/Keywos/rule/main/tv/app/144px/yj.png
 #!input = 地区

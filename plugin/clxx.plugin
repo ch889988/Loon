@@ -3,3 +3,6 @@
 #!input = city
 #!openUrl = http://m.xy.bendibao.com/news/xianxingchaxun/city.php
 #!icon= https://raw.githubusercontent.com/ch889988/Loon/main/icons/DiDi.png
+
+[Script]
+cron "0 0 1 1 *" script-path=https://raw.githubusercontent.com/ch889988/Loon/main/js/clxx.js, timeout=60

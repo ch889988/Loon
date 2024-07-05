@@ -42,5 +42,11 @@
 # > 网易云_VIP歌曲提醒框
 ^https?:\/\/interface(\d)?\.music\.163\.com\/w?e?api\/vipcenter/tspopup\/get - reject-dict
 
+^https?+:\/\/.+?\/eapi\/(?>ad|log)\/ - reject-200
+^https?:\/\/interface(\d)?.music.163.com\/eapi\/ad\/ - reject
+^https?:\/\/iadmusicmat\.music\.126\.net\/.+\.jpg - reject
+^http:\/\/interface\.music\.163\.com\/eapi\/ad\/config\/get - reject
+^https?:\//m\.ads\.8le8le\.com\/adShow - reject
+
 [MITM]
 hostname = interface*.music.163.com

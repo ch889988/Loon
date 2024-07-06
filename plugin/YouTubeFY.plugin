@@ -1,6 +1,6 @@
 #!name=YouTube Translate
 #!desc=翻译为简体中文
-#!icon= https://raw.githubusercontent.com/ch889988/Loon/main/icons/youtube.png
+#!icon= https://raw.githubusercontent.com/ch889988/Loon/main/icons/Youtube.png
 #!select = 字幕位置,仅输出译文,译文位于外文之上,译文位于外文之下
 
 [Script]

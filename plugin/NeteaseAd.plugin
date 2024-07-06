@@ -57,4 +57,4 @@
 ^https?:\/\/interface(\d)?\.music\.163\.com\/w?e?eapi\/resource-exposure\/config - reject-dict
 
 [MITM]
-hostname = interface*.music.163.com
+hostname = interface*.music.163.com,appconf.mail.163.com,c.m.163.com,client.mail.163.com,m.you.163.com,p.du.163.com,support.you.163.com

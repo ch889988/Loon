@@ -42,11 +42,19 @@
 # > 网易云_VIP歌曲提醒框
 ^https?:\/\/interface(\d)?\.music\.163\.com\/w?e?api\/vipcenter/tspopup\/get - reject-dict
 
-^https?+:\/\/.+?\/eapi\/(?>ad|log)\/ - reject-200
-^https?:\/\/interface(\d)?.music.163.com\/eapi\/ad\/ - reject
-^https?:\/\/iadmusicmat\.music\.126\.net\/.+\.jpg - reject
-^http:\/\/interface\.music\.163\.com\/eapi\/ad\/config\/get - reject
-^https?:\//m\.ads\.8le8le\.com\/adShow - reject
+^https?:\/\/appconf\.mail\.163\.com\/mmad\/ - reject
+^https?:\/\/c\.m\.163\.com\/nc\/gl\/ - reject
+^https?:\/\/p\.du\.163\.com\/ad\/ - reject
+^https?:\/\/support\.you\.163\.com\/appversync\/check.do - reject
+^https?:\/\/support\.you\.163\.com\/xhr\/boot\/getBootMedia\.json - reject
+^https?:\/\/m\.you\.163\.com\/activity\/popWindow - reject-200
+^https?:\/\/client\.mail\.163\.com\/apptrack\/confinfo\/searchMultiAds - reject
+^https?:\/\/interface(\d)?\.music\.163\.com\/eapi\/(ad|abtest|sp|hot|store|search\/(specialkeyword|defaultkeyword|hot)) - reject-dict
+^https?:\/\/interface(\d)?\.music\.163\.com\/w?e?api\/comment\/feed\/inserted - reject-dict
+^https?:\/\/interface(\d)?\.music\.163\.com\/w?e?api\/comment\/hotcomment\/collect - reject-dict
+^https?:\/\/interface(\d)?\.music\.163\.com\/w?e?api\/link\/position\/show\/resource - reject-dict
+^https?:\/\/interface(\d)?\.music\.163\.com\/w?e?api\/v1\/content\/exposure\/comment - reject-dict
+^https?:\/\/interface(\d)?\.music\.163\.com\/w?e?eapi\/resource-exposure\/config - reject-dict
 
 [MITM]
 hostname = interface*.music.163.com

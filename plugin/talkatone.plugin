@@ -1,5 +1,5 @@
-#!name=talkatone
-#!desc=去广告｜让登录更简单\n\n需要让这个域名代理\nDOMAIN-SUFFIX,tktn.be
+#!name=talkatone去广告
+#!desc=talkatone去广告
 #!icon=https://raw.githubusercontent.com/ch889988/Loon/main/icons/talkatone.png
 
 [Rule]

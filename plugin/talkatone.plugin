@@ -1,0 +1,36 @@
+#!name=talkatone
+#!desc=去广告｜让登录更简单\n\n需要让这个域名代理\nDOMAIN-SUFFIX,tktn.be
+#!icon=https://raw.githubusercontent.com/ch889988/Loon/main/icons/talkatone.png
+
+[Rule]
+# 去广告
+DOMAIN-SUFFIX,ads.inmobi.com,REJECT
+DOMAIN-SUFFIX,tappx.com,REJECT
+DOMAIN-SUFFIX,criteo.com,REJECT
+DOMAIN-SUFFIX,pubmatic.com,REJECT
+DOMAIN-SUFFIX,smaato.net,REJECT
+DOMAIN-SUFFIX,amazon-adsystem.com,REJECT
+DOMAIN-KEYWORD,googleads,REJECT
+DOMAIN-SUFFIX,adsappier.com,REJECT
+DOMAIN-SUFFIX,appier.net,REJECT
+DOMAIN-SUFFIX,appiersig.com,REJECT
+# 让登录更容易
+DOMAIN-SUFFIX,mobilefuse.com,DIRECT
+DOMAIN-SUFFIX,inmobi.com,DIRECT
+DOMAIN-SUFFIX,crashlytics.com,DIRECT
+DOMAIN-SUFFIX,talkatone.com,DIRECT
+DOMAIN-SUFFIX,kochava.com,DIRECT
+DOMAIN-SUFFIX,cohere.com,DIRECT
+DOMAIN-SUFFIX,ip-api.com,DIRECT
+DOMAIN-SUFFIX,agkn.com,DIRECT
+DOMAIN-SUFFIX,tktn.at,DIRECT
+IP-CIDR,50.117.27.0/24,DIRECT
+IP-CIDR,69.46.75.0/24,DIRECT
+IP-CIDR,205.164.56.0/24,DIRECT
+IP-CIDR,63.251.124.0/24,DIRECT
+
+[Script]
+http-response ^https:\/\/gum\.criteo\.com\/appevent\/v1\/2379\?.* script-path=https://raw.githubusercontent.com/axinhouzilaoyue/myScript/main/surge/throttle-rewrite.js, requires-body=true, tag=throttle
+
+[MITM]
+hostname = gum.criteo.com

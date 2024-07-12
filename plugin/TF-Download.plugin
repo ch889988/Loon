@@ -1,0 +1,12 @@
+#!name= TestFlight区域限制解除
+#!desc= TestFlight区域限制解除
+#!icon= https://raw.githubusercontent.com/ch889988/Loon/main/icons/testflight.png
+
+[General]
+skip-proxy = iosapps.itunes.apple.com
+
+[Script]
+http-request ^https?:\/\/testflight\.apple\.com\/v\d\/accounts\/.+?\/install$ requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/ch889988/Loon/main/js/TF_Download.js, tag=TestFlight区域限制解除
+
+[MITM]
+hostname = testflight.apple.com

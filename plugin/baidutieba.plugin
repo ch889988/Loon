@@ -1,6 +1,6 @@
 #!name=百度贴吧去广告
 #!desc=百度贴吧去广告
-#!icon=https://gitlab.com/lodepuly/iconlibrary/-/raw/main/App_icon/120px/Tieba.png
+#!icon=https://raw.githubusercontent.com/ch889988/Loon/main/icons/baidutieba.png
 
 [Rule]
 DOMAIN,180.76.76.200,REJECT

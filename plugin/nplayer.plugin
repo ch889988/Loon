@@ -3,7 +3,7 @@
 #!icon=https://raw.githubusercontent.com/ch889988/Loon/main/icons/nplayer.png
 
 [Script]
-http-request api_key=6829be025de07f56845fbb450f96dc0d script-path=https://raw.githubusercontent.com/rartv/SurgeScript/main/nPlayer/nPlayer.js, tag=nPlayer 中文元数据修复
+http-request api_key=6829be025de07f56845fbb450f96dc0d script-path=https://raw.githubusercontent.com/rartv/SurgeScript/main/nPlayer/nPlayer.js, tag=nPlayer中文元数据修复
 
 [MITM]
 hostname = api.themoviedb.org

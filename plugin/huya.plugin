@@ -1,0 +1,17 @@
+#!name = 虎牙去广告
+#!desc = 虎牙去广告
+#!icon = https://raw.githubusercontent.com/ch889988/Loon/main/icons/huya.png
+
+[Rule]
+DOMAIN, acdn.adnxs.com, REJECT
+DOMAIN, mediation.adnxs.com, REJECT
+DOMAIN, sin3-ib.adnxs.com, REJECT
+
+[Rewrite]
+^https?:\/\/cdn\.wup\.huya\.com\/launch\/queryHttpDns$ reject-dict
+^https?:\/\/business\.msstatic\.com\/advertiser\/material reject-dict
+^https?:\/\/cdnfile1\.msstatic\.com\/cdnfile\/appad\/ reject-dict
+^https?://live-ads\.huya\.com/live/getAllEntrance.*$ reject-dict
+
+[Mitm]
+hostname = cdn.wup.huya.com, business.msstatic.com, cdnfile1.msstatic.com, live-ads.huya.com

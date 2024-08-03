@@ -25,9 +25,9 @@ DOMAIN-SUFFIX,amdc.m.taobao.com,REJECT
 DOMAIN-SUFFIX,iyes.youku.com,REJECT
 DOMAIN-SUFFIX,sq.sljkj.com,REJECT
 DOMAIN-SUFFIX,s2s.adjust.com,REJECT
-#百度移动广告联盟，可能误杀
+#百度移动广告联盟
 DOMAIN-SUFFIX,mobads.baidu.com,REJECT
-#腾讯广告联盟，可能误杀
+#腾讯广告联盟
 DOMAIN-SUFFIX,mi.gdt.qq.com,REJECT
 DOMAIN-SUFFIX,jcollection.shuqireader.com,REJECT
 DOMAIN-SUFFIX,stats.jpush.cn,REJECT
@@ -60,6 +60,14 @@ DOMAIN,myg.qy.net,REJECT
 DOMAIN,www.qchannel01.cn,REJECT
 DOMAIN,iqiyi-mipdx.cn.miaozhen.com,REJECT
 DOMAIN-SUFFIX,afdback.ppsimg.com,REJECT
+#咪咕视频
+DOMAIN-SUFFIX,ad.cmvideo.cn,REJECT
+DOMAIN,ggc.cmvideo.cn,REJECT
+DOMAIN,ggic03.miguvideo.com,REJECT
+DOMAIN,ggmk.miguvideo.com,REJECT
+DOMAIN,ggv.cmvideo.cn,REJECT
+DOMAIN,ggx.cmvideo.cn,REJECT
+DOMAIN,ggx03.miguvideo.com,REJECT
 #高德地图
 DOMAIN,optimus-ads.amap.com,REJECT
 
@@ -89,8 +97,7 @@ DOMAIN,sf3-fe-tos.pglstatp-toutiao.com,REJECT
 DOMAIN,qzs.gdtimg.com,REJECT
 
 [URL Rewrite]
-
-#有兔阅读(米兔)去羞耻的开屏广告图片
+#有兔阅读(米兔)去开屏广告图片
 ^http:\/\/img\.dailmo\.com\/img\/61\/23c7125bfe6166d69f3bff5b0ca4d31e\.jpg _ reject
 ^http:\/\/img\.dailmo\.com\/img\/50\/edb40c6392f848df37f9c31d8a6f90f6\.jpg _ reject
 ^http:\/\/img\.dailmo\.com\/img\/6\/90585d9e96c73dd49644af57d8501624\.jpg _ reject
@@ -102,7 +109,6 @@ DOMAIN,qzs.gdtimg.com,REJECT
 ^http:\/\/img\.allahall\.com\/img\/59\/6a13a75dfe46ebfdac96bd27ef098885\.jpg _ reject
 ^https?:\/\/img\.alipaycashyuan\.com\/img\/59\/6a13a75dfe46ebfdac96bd27ef098885\.+ _ reject
 ^http:\/\/app\.zhoudamozi\.com\/ad\/.+ _ reject-200
-
 
 #书旗小说去广告
 ^http:\/\/ut2\.shuqistat\.com\/.+\.gif _ reject
@@ -127,8 +133,7 @@ DOMAIN,qzs.gdtimg.com,REJECT
 ^https:\/\/apiwz\.midukanshu\.com\/advert\/treasureInfo$ _ reject
 ^https:\/\/apiwz\.midukanshu\.com\/config\/getAds$ _ reject
 
-
-#百度地图开屏广告
+#百度地图去开屏广告
 #hostname=*.bdstatic.com
 #^https?:\/\/.+\.bdstatic\.com\/-0U0bnSm1A5BphGlnYG\/tam-ogel\/.+\.jpg _ reject
 #^https?:\/\/.+\.bdstatic\.com\/.+\/tam-ogel\/.+\.jpg _ reject

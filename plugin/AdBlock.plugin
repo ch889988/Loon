@@ -11,7 +11,7 @@ DOMAIN,img.allahall.com,DIRECT
 DOMAIN,img.dailmo.com,DIRECT
 DOMAIN,activation.crossutility.com,DIRECT
 
-#书旗广告域名,这广告实在太多了，可能误杀，不认识的全禁止了
+#书旗小说
 DOMAIN-SUFFIX,pangolin-sdk-toutiao.com,REJECT
 DOMAIN-SUFFIX,xwuad.com,REJECT
 DOMAIN-SUFFIX,tobapplog.ctobsnssdk.com,REJECT
@@ -152,12 +152,19 @@ DOMAIN,qzs.gdtimg.com,REJECT
 #高德地图广告
 ^http:\/\/ems\.youku\.com\/imp\? _ reject
 ^http:\/\/optimus-ads\.amap\.com\/uploadimg\/.+ _ reject
+
+#咪咕视频
+^https?+:\/\/gg\w+?\.cmvideo\.cn\/v\d\/iflyad\/ - reject-200
+^https?+:\/\/ggic\d?\.cmvideo\.cn\/ad\/ - reject-200
+^https?+:\/\/ggx\.cmvideo\.cn\/request\/ - reject-200
+^https?+:\/\/.+?\/cdn-adn\/ - reject-200
+
 #携程广告
 #hostname=ma-adx.ctrip.com,m.ctrip.com
 ^https:\/\/ma-adx\.ctrip\.com\/_ma\.gif _ reject
 ^https:\/\/m\.ctrip\.com\/restapi\/.+\/json\/tripAds _ reject
 ^https:\/\/m\.ctrip\.com\/html5\/webresource\/js\/iscroll\.js$ _ reject
-#
+
 #hostname=mbd.baidu.com
 ^https:\/\/mbd\.baidu\.com\/newspage\/api\/getmobads\?page\=landingshare _ reject
 

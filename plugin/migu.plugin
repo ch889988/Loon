@@ -1,0 +1,10 @@
+#!name= 咪咕视频去广告
+#!desc= 咪咕视频去广告
+#!icon= https://raw.githubusercontent.com/ch889988/Loon/main/icons/migu.png
+
+[Rewrite]
+^https?:\/\/app\.c\.nf\.migu\.cn\/.*column\/start(-)?up-pic - reject-200
+^https?:\/\/aikanvod\.miguvideo\.com\/video\/p\/i_adverseInterface\.jsp - reject-200
+
+[MITM]
+hostname = app.c.nf.migu.cn

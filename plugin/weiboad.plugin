@@ -3,27 +3,27 @@
 #!icon=https://raw.githubusercontent.com/ch889988/Loon/main/icons/weiboad.png
 
 [Rewrite]
-# > 微博_AD_Preload@ddgksf2013
+# > 微博_AD_Preload
 ^https?:\/\/api\.weibo\.cn\/\d\/ad\/preload - reject-dict
-# > 微博国际版_趋势页热门影片@ddgksf2013
+# > 微博国际版_趋势页热门影片
 ^https?:\/\/api\.weibo\.cn\/\d\/cardlist\?v_f=.*Weibo_intl - reject-dict
-# > 微博_用户推荐弹窗@ddgksf2013
+# > 微博_用户推荐弹窗
 ^https?:\/\/api\.weibo\.cn\/\d\/profile\/recommend_popuser - reject-dict
-# > 微博_每日一次的开屏广告请求@ddgksf2013
+# > 微博_每日一次的开屏广告请求
 ^https?:\/\/boot.*weibo\.com\/v\d\/ad\/realtime - reject-200
-# > 微博_去除底部超话栏表层浮icon及tips@ddgksf2013
+# > 微博_去除底部超话栏表层浮icon及tips
 ^https?:\/\/api\.weibo\.cn\/\d\/!\/huati\/discovery_home_bottom_getdotinfo - reject-dict
-# > 微博_屏蔽首页左上角每日的弹窗tips@ddgksf2013
+# > 微博_屏蔽首页左上角每日的弹窗tips
 ^https?:\/\/m?api\.weibo\.c(n|om)\/\d/push/daily - reject-dict
-# > 微博_应用内弹窗广告@ddgksf2013
+# > 微博_应用内弹窗广告
 ^https?:\/\/(preload-click|preload-impression)\.uve\.weibo\.com\/(interface\/wbpullad\/wbpullad_click\.php|wbapplua\/get_wbpullad_log\.lua) - reject
-# > 微博_屏蔽sdkconfig请求@ddgksf2013
+# > 微博_屏蔽sdkconfig请求
 ^https?:\/\/sdkapp\.uve\.weibo\.com\/interface\/sdk\/sdkconfig\.php - reject
-# > 微博_Spotlight@ddgksf2013
+# > 微博_Spotlight
 ^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/hot\/hours_spotlight - reject-dict
-# > 微博国际版_屏蔽hotsearch@ddgksf2013
+# > 微博国际版_屏蔽hotsearch
 ^https?:\/\/weibointl\.api\.weibo\.c(n|om)\/portal\.php\?a=hot_search_users - reject-dict
-# > 微博国际版_屏蔽热推荐@ddgksf2013
+# > 微博国际版_屏蔽热推荐
 ^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/ad\/weibointl\? - reject-dict
 
 [Script]

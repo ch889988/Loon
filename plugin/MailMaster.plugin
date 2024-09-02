@@ -1,6 +1,6 @@
 #!name = 网易邮箱大师去广告
 #!desc = 网易邮箱大师去广告
-#!icon = https://raw.githubusercontent.com/ch889988/Loon/main/icons/MailMaster.png
+#!icon = https://raw.githubusercontent.com/ch889988/Loon/main/icons/Mail.png
 
 [Rule]
 # 拦截HTTPDNS

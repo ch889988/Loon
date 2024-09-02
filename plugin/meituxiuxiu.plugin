@@ -1,6 +1,6 @@
 #!name = 美图秀秀
 #!desc = 美图秀秀
-#!icon= https://raw.githubusercontent.com/ch889988/Loon/main/icons/meituxx.png
+#!icon= https://raw.githubusercontent.com/ch889988/Loon/main/icons/MeiTu.png
 
 [Script]
 http-response ^https?:\/\/((h5|api)\.xiuxiu|api-sub|api\.posters)\.meitu\.com\/.+\/(vip|user|h\d|center|home) script-path = https://raw.githubusercontent.com/mphin/proxy_tools/main/scripts/meituxiuxiu/script/mtxx.js, requires-body = true, tag = 美图秀秀

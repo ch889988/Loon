@@ -1,0 +1,25 @@
+#!name=美团外卖去广告
+#!desc=美团外卖去广告
+#!icon=https://raw.githubusercontent.com/ch889988/Loon/main/icons/mtwm.png
+
+[Rewrite]
+^https?:\/\/(s3plus|flowplus)\.meituan\.net\/v\d\/\w+\/linglong\/\w+\.(gif|jpg|mp4) - reject
+^https?:\/\/apimobile\.meituan\.com\/appupdate\/mach\/checkUpdate? - reject
+^https?:\/\/flowplus\.meituan\.net\/v\d\/\w+\/linglong\/\d+\.(gif|jpg|mp4) - reject
+^https?:\/\/img\.meituan\.net\/(adunion|display|dpmobile|midas)\/\w+\.(gif|jpg|jpg\.webp)$ - reject
+https?:\/\/p\d\.meituan\.net\/(bizad|wmbanner)\/\w+\.jpg - reject
+^https?:\/\/p\d\.meituan\.net\/(bizad|wmbanner|brandCpt)\/\w+\.jpg - reject
+^https?:\/\/p\d\.meituan\.net\/movie\/\w+\.jpg\?may_covertWebp - reject
+^https?:\/\/peisongapi\.meituan\.com\/client\/getInitiateImage - reject-200
+^https?:\/\/s3plus\.meituan\.net\/.*\/brandcpt-vedio\/.*\?time - reject
+^https?:\/\/wmapi\.meituan\.com\/api\/v\d\/(openscreen\?ad|loadInfo\?|startpicture) - reject
+^https?:\/\/wmapi\.meituan\.com\/api\/v\d\/startpicture - reject
+^https?:\/\/www\.meituan\.com\/api\/v\d\/appstatus\? - reject
+
+
+[Script]
+http-response ^https?:\/\/wmapi\.meituan\.com\/api\/v\d+\/loadInfo? script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/startup/startup.js,requires-body=1,tag=美团外卖_开屏去广告
+
+[MITM]
+hostname = apimobile.meituan.com, flowplus.meituan.net, img.meituan.net, p*.meituan.net, peisongapi.meituan.com, s3plus.meituan.net, 
+wmapi.meituan.com, www.meituan.com

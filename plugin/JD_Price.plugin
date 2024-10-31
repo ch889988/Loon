@@ -3,7 +3,7 @@
 #!icon = https://raw.githubusercontent.com/ch889988/Loon/main/icons/JD.png
 
 [Script]
-http-response ^https?://api\.m\.jd\.com/(client\.action|api)\?functionId=(wareBusiness|serverConfig|basicConfig|lite_wareBusiness|pingou_item) script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/JD/JD_Price.js, requires-body = true, tag = 京东比价
-  
-[Mitm]
+http-response ^https?:\/\/api\.m\.jd\.com/client\.action\?functionId=(wareBusiness|serverConfig|basicConfig) script-path=https://raw.githubusercontent.com/wf021325/qx/master/js/jd_price.js, requires-body=true, timeout=60, tag=jd_price
+
+[MITM]
 hostname = api.m.jd.com

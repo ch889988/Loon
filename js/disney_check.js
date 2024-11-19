@@ -45,7 +45,7 @@ const DEFAULT_OPTIONS = {
   title: 'Disney+ 解锁检测',
   availableContent: '支持 Disney+ ➟ #REGION_FLAG# #REGION_NAME#',
   availableIcon: undefined,
-  availableIconColor: undefined,
+  availableIconColor: '#008000',
   availableStyle: 'good',
   comingContent: 'Coming Soon ➟ #REGION_FLAG# #REGION_NAME#',
   comingIcon: undefined,

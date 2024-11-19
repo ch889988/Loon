@@ -33,7 +33,7 @@ const DEFAULT_OPTIONS = {
   title: 'Netflix 解锁检测',
   fullContent: '完整支持 ➟ #REGION_FLAG# #REGION_NAME#',
   fullIcon: 'checkmark.seal',
-  fullIconColor: '#16A951',
+  fullIconColor: '',
   fullStyle: 'good',
   onlyOriginalContent: '仅支持自制剧 ➟ #REGION_FLAG# #REGION_NAME#',
   onlyOriginalIcon: '',

@@ -2,6 +2,7 @@ DOMAIN,apple.imap.mail.yahoo.com
 DOMAIN,apple.smtp.mail.yahoo.com
 DOMAIN,imap-mail.outlook.com
 DOMAIN,imap.gmail.com
+DOMAIN,mail.google.com
 DOMAIN,outlook.office365.com
 DOMAIN,pop.gmail.com
 DOMAIN,smtp-mail.outlook.com

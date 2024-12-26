@@ -21,13 +21,5 @@
 [Script]
 BaiduCloud = type=http-response, pattern=https:\/\/pan\.baidu\.com\/rest\/2\.0\/membership\/user, script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/BaiduCloud.js, requires-body=true
 
-baiduCloud.adblock = type=http-response, pattern=^https?:\/\/pan\.baidu\.com\/api\/getsyscfg, script-path=https://gist.githubusercontent.com/ddgksf2013/f43026707830c7818ee3ba624e383c8d/raw/baiduCloud.adblock.js, requires-body=true, max-size=-1, timeout=60
-
-baiduCloud.adblock = type=http-response, pattern=^https?:\/\/afd\.baidu\.com\/afd\/entry, script-path=https://gist.githubusercontent.com/ddgksf2013/f43026707830c7818ee3ba624e383c8d/raw/baiduCloud.adblock.js, requires-body=true, max-size=-1, timeout=60
-
-baiduCloud.adblock = type=http-response, pattern=^https:\/\/pan\.baidu\.com\/rest\/.*\/membership\/user\?method=gamecenter, script-path=https://gist.githubusercontent.com/ddgksf2013/f43026707830c7818ee3ba624e383c8d/raw/baiduCloud.adblock.js, requires-body=true, max-size=-1, timeout=60
-
-baiduCloud.adblock = type=http-response, pattern=^https:\/\/pan\.baidu\.com\/feed\/cardinfos, script-path=https://gist.githubusercontent.com/ddgksf2013/f43026707830c7818ee3ba624e383c8d/raw/baiduCloud.adblock.js, requires-body=true, max-size=-1, timeout=60
-
 [MITM]
 hostname = %APPEND% pan.baidu.com, afd.baidu.com
